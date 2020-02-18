@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BookListRazor.Model
 {
-    public class ApplicationDbContextcs : DbContext
+    public class ApplicationDb : DbContext
     {
     }
 }
