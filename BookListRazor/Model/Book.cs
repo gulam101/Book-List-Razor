@@ -10,5 +10,10 @@ namespace BookListRazor.Model
     {
         [Key]
         public int Id { get; set; }
+
+        [Required]
+        public string name { get; set; }
+
+        public string author { get; set; }
     }
 }
