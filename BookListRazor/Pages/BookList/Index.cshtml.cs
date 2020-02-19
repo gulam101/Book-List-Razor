@@ -5,6 +5,7 @@ using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.RazorPages;
 using BookListRazor.Model;
+using System.Data.Entity;
 
 namespace BookListRazor
 {
@@ -16,9 +17,11 @@ namespace BookListRazor
         {
             _db = db;
         }
-        public void OnGet()
-        {
 
+        public IEnumerable<Book> Books { get; set; }
+        public async Task OnGet()
+        {
+            Books = await _db.Book.ToListAsync();
         }
     }
 }
