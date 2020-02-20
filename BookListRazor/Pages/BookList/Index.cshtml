@@ -18,3 +18,15 @@
         <a class="btn btn-info form-control text-white">Create New Book</a>
     </div>
 </div>
+
+<div class="col-12 border p-3 mt-3">
+    <form method="post">
+        @if(Model.Books.Count() > 0)
+		{
+
+		} else
+		{
+            <p>No books avaliable. Please try again later!</p>
+		}
+    </form>
+</div>
