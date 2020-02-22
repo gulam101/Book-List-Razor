@@ -23,7 +23,31 @@
     <form method="post">
         @if(Model.Books.Count() > 0)
 		{
+            <table class="table table-striped border">
+                <tr class="table-secondary">
+                    <th>
+                        <label asp-for="Books.FirstOrDefault().Name"></label>
+                    </th>
+                    <th>
+                        @Html.DisplayFor(m => m.Books.First().Author);
+                    </th>
+                    <th>
 
+                    </th>
+                </tr>
+                @foreach(var item in Model.Books)
+				{
+            <tr>
+                <td>
+                    @Html.DisplayFor(m => item.Name)
+                </td>
+                <td>
+                    @Html.DisplayFor(m => item.Author)
+                </td>
+            </tr>
+				}
+
+            </table>
 		} else
 		{
             <p>No books avaliable. Please try again later!</p>
