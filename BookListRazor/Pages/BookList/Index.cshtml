@@ -1,56 +1,57 @@
 ﻿@page
 @model BookListRazor.IndexModel
 @{
-    ViewData["Title"] = "Index";
+	ViewData["Title"] = "Index";
 }
 
-    <div class="title">
-        <h1>Books</h1>
-    </div>
+<div class="title">
+	<h1>Books</h1>
+</div>
 
 
-<br/>
+<br />
 <div class="container row p-0 m-0">
-    <div class="col-10">
-        <h2 class="text-info">Book List</h2>
-    </div>
-    <div class="col-2">
-        <a class="btn btn-info form-control text-white">Create New Book</a>
-    </div>
+	<div class="col-10">
+		<h2 class="text-info">Book List</h2>
+	</div>
+	<div class="col-2">
+		<a class="btn btn-info form-control text-white">Create New Book</a>
+	</div>
 </div>
 
 <div class="col-12 border p-3 mt-3">
-    <form method="post">
-        @if(Model.Books.Count() > 0)
+	<form method="post">
+		@if (Model.Books.Count() > 0)
 		{
-            <table class="table table-striped border">
-                <tr class="table-secondary">
-                    <th>
-                        <label asp-for="Books.FirstOrDefault().Name"></label>
-                    </th>
-                    <th>
-                        @Html.DisplayFor(m => m.Books.First().Author);
-                    </th>
-                    <th>
+			<table class="table table-striped border">
+				<tr class="table-secondary">
+					<th>
+						<label asp-for="Books.FirstOrDefault().Name"></label>
+					</th>
+					<th>
+						@Html.DisplayFor(m => m.Books.First().Author);
+					</th>
+					<th>
 
-                    </th>
-                </tr>
-                @foreach(var item in Model.Books)
+					</th>
+				</tr>
+				@foreach (var item in Model.Books)
 				{
-            <tr>
-                <td>
-                    @Html.DisplayFor(m => item.Name)
-                </td>
-                <td>
-                    @Html.DisplayFor(m => item.Author)
-                </td>
-            </tr>
+					<tr>
+						<td>
+							@Html.DisplayFor(m => item.Name)
+						</td>
+						<td>
+							@Html.DisplayFor(m => item.Author)
+						</td>
+					</tr>
 				}
 
-            </table>
-		} else
-		{
-            <p>No books avaliable. Please try again later!</p>
+			</table>
 		}
-    </form>
+		else
+		{
+			<p>No books avaliable. Please try again later!</p>
+		}
+	</form>
 </div>
