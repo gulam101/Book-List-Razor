@@ -9,11 +9,13 @@
 <br/>
 
 <div class="border container" style="padding:30px">
-     <form>
-             <div class="form-group row">
+     <form method="post">
+         <div class="form-group row">
              <div class="col-4">
+                 <label asp-for="book.Name"></label>
              </div>
                  <div class="col-6">
+                     <input asp-for="book.Name" class="form-control"/>
              </div>
          </div>
      </form>
