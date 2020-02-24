@@ -18,6 +18,7 @@ namespace BookListRazor
             _db = db;
         }
 
+        [BindProperty]
         public Book book { get; set; }
 
 
@@ -25,5 +26,20 @@ namespace BookListRazor
         {
 
         }
+
+        public async Task<IActionResult> OnPost()
+        {
+            if(ModelState.IsValid)
+            {
+                await _db.Book.AddAsync(book);
+                //Once this command is executed this will push data into the database
+                await _db.SaveChangesAsync();
+            } 
+            else
+            {
+                return Page();
+            }
+        }
+
     }
 }
