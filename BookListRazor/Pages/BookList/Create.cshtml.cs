@@ -12,6 +12,15 @@ namespace BookListRazor
     {
 
         private readonly ApplicationDb _db;
+
+        public CreateModel(ApplicationDb db)
+        {
+            _db = db;
+        }
+
+        public Book book { get; set; }
+
+
         public void OnGet()
         {
 
