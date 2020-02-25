@@ -18,6 +18,7 @@ namespace BookListRazor
             _db = db;
         }
 
+        //Allows me to call the same object without creating it again
         [BindProperty]
         public Book book { get; set; }
 
