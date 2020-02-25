@@ -8,6 +8,7 @@ namespace BookListRazor.Model
         [Key]
         public int Id { get; set; }
 
+        //Requires means that Name cannot be empty!
         [Required]
         public string Name { get; set; }
 
